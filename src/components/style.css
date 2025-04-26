@@ -1,0 +1,15 @@
+/* MainPage.css */
+
+/* Transition for smooth effects */
+.splide__slide {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* default lower opacity for non-focused slides */
+    transform: scale(0.9); /* slightly smaller for non-active slides */
+  }
+  
+  /* The active (focused) slide gets full opacity and scale */
+  .splide__slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  

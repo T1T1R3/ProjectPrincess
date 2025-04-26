@@ -1,0 +1,16 @@
+#root {
+  text-align: center;
+  width: 100%;
+  background-color: "#060D17";
+}
+
+html, body{
+  margin: 0;
+  padding:0;
+  display: flex;
+  background-color: "#060D17";
+}
+
+
+
+

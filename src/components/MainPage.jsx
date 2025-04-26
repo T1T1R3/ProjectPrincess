@@ -1,97 +1,76 @@
 import React from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
-import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
+import { Button, Box, IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import './style.css';
-import { movies } from "../moviesBase";
+import Castle1 from '../moviesCover/castle1.jpg';
+import Castle2 from '../moviesCover/castle2.jpg';
+import Barbie from '../moviesCover/Barbie.png';
+import Disney from '../moviesCover/Disney.png';
 export default function MainPage() {
-  const [open, setOpen] = React.useState(false);
-  const [activeMovieId, setActiveMovieId] = React.useState(null);
-  const [activeMovieName, setActiveMovieName] = React.useState(null);
-  const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
+  const navigate = useNavigate();
+  const [focusedSide, setFocusedSide] = React.useState("right");
 
-  const handleClose = () => setOpen(false);
-  const handleOpen = () => setOpen(true);
-
-  const options = {
-    pagination: false,
-    perPage: 3,
-    focus: 'center',
-    gap: '0px',
-    trimspace: false,
-    breakpoints: {
-      1024: {
-        perPage: 2,
-      },
-      640: {
-        perPage: 1,
-      },
-    },
-  };
-
-  const handleMoved = (splide, newIndex) => {
-    const movieId = movies[newIndex].id;
-    setActiveMovieId(movieId);
-    setActiveMovieName(movies[newIndex].title);
-    setActiveMovieUrl(movies[newIndex].videoUrl);
-
-  }
+  const handleLeave = () => setFocusedSide("none");
 
   return (
-    <div className="main-container">
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        maxWidth="md"
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' }, 
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      {/* Primeira metade - Left */}
+      <Box
+        onMouseEnter={() => setFocusedSide("left")}
+        onMouseLeave={handleLeave}
+        onClick={() => setFocusedSide("left")}
+        sx={{
+          flex: 1,
+          backgroundImage: `url(${Castle1})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          filter: focusedSide === "right" ? "brightness(0.5)" : "brightness(1)",
+          transition: "filter 0.3s", // Transição suave do filtro
+        }}
       >
-        <DialogContent sx={{ backgroundColor: '#060D17' }}>
-          <DialogTitle
-            sx={{
-              backgroundColor: '#060D17',
-              color: 'white',
-              fontWeight: '700',
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
-            {activeMovieName}
-          </DialogTitle>
-          <iframe style={{border:'none', backgroundColor:'black'}} src={activeMovieUrl}
-          allowfullscreen="allowfullscreen"
-          mozallowfullscreen="mozallowfullscreen" 
-          msallowfullscreen="msallowfullscreen" 
-          oallowfullscreen="oallowfullscreen" 
-          webkitallowfullscreen="webkitallowfullscreen"
-          width="320" height="240"> </iframe> 
-          <div className="dialog-button-container">
-            <Button
-              onClick={handleClose}
-              variant="contained" 
-              color="info dark"
-              sx={{ boxShadow:'none', border:'none', color:'white', marginBottom: '0px', marginTop: "5px", fontWeight:'700' }}
-            >
-              Fechar
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+        <IconButton sx={{maxWidth:'300px'}} onClick={() => {
+            setFocusedSide("right");
+            navigate('/barbie');
+          }} >
+            <img src={Barbie} alt="Disney" style={{ width:'90%'}} />
+        </IconButton>
+        
+      </Box>
 
-      <div className="slider-container">
-        <Splide options={options} onMoved={handleMoved}>
-          {movies.map((movie) => (
-            <SplideSlide key={movie.id}>
-              <div className="movie-card">
-                <img style={{ display: "block", margin: "0 auto" }} width="294" height="412" src={movie.image} alt={movie.title} className="movie-image" />
-              </div>
-            </SplideSlide>
-          ))}
-
-        </Splide>
-        <div className="button-wrapper">
-            <Button variant="contained" color="info dark" sx={{boxShadow:'none', border:'none', color:'white', fontWeight:'700'} } onClick={handleOpen}>Assistir</Button>
-        </div>
-      </div>
-    </div>
+      {/* Segunda metade - Right */}
+      <Box
+        onMouseEnter={() => setFocusedSide("right")}
+        onMouseLeave={handleLeave}
+        onClick={() => setFocusedSide("right")}
+        sx={{
+          flex: 1,
+          backgroundImage: `url(${Castle2})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          filter: focusedSide === "left" ? "brightness(0.5)" : "brightness(1)",
+          transition: "filter 0.3s",
+        }}
+      >
+        <IconButton sx={{maxWidth:'300px'}} onClick={() => {
+            setFocusedSide("right");
+            navigate('/disney');
+          }} >
+            <img src={Disney} alt="Disney" style={{ width:'100%'}} />
+        </IconButton>
+      </Box>
+    </Box>
   );
 }

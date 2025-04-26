@@ -23,11 +23,22 @@
   .slider-container {
     width: 65%;
   }
+
+  iframe {
+    width:"1490"; 
+    height:"480";
+  }
   
   @media (max-width: 768px) {
     .slider-container {
       width: 90%;
     }
+
+    iframe {
+        width:"320px"; 
+        height:"240px";
+      }
+
   }
   
   .dialog-button-container {

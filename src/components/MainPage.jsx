@@ -4,6 +4,7 @@ import '@splidejs/react-splide/css';
 import ExampleVideo from "./ExampleVideo";
 import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
 import './style.css';
+import BelaFera from './BelaFera.jpg';
 
 export default function MainPage() {
   const [open, setOpen] = React.useState(false);
@@ -73,7 +74,7 @@ export default function MainPage() {
         <Splide options={options}>
           <SplideSlide>
             <img
-              src="../../public/BelaFera.jpg"
+              src={BelaFera}
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -82,7 +83,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/BelaFera.jpg"
+              src={BelaFera}
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -91,7 +92,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/BelaFera.jpg"
+              src={BelaFera}
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -100,7 +101,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/BelaFera.jpg"
+              src={BelaFera}
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -109,7 +110,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/BelaFera.jpg"
+              src={BelaFera}
               alt="A Bela e a Fera"
               width="294"
               height="412"

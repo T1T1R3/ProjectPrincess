@@ -73,7 +73,7 @@ export default function MainPage() {
         <Splide options={options}>
           <SplideSlide>
             <img
-              src="../../public/static/images/BelaFera.jpg"
+              src="../../public/BelaFera.jpg"
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -82,7 +82,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/static/images/BelaFera.jpg"
+              src="../../public/BelaFera.jpg"
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -91,7 +91,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/static/images/BelaFera.jpg"
+              src="../../public/BelaFera.jpg"
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -100,7 +100,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/static/images/BelaFera.jpg"
+              src="../../public/BelaFera.jpg"
               alt="A Bela e a Fera"
               width="294"
               height="412"
@@ -109,7 +109,7 @@ export default function MainPage() {
           </SplideSlide>
           <SplideSlide>
             <img
-              src="../../public/static/images/BelaFera.jpg"
+              src="../../public/BelaFera.jpg"
               alt="A Bela e a Fera"
               width="294"
               height="412"

@@ -14,23 +14,22 @@ export default function MainPage() {
 
   const options = {
     pagination: false,
-    perPage: 3,      
-    focus: 'center',  
-    gap: '0px',   
-    trimspace: false,    
+    perPage: 3,
+    focus: 'center',
+    gap: '0px',
+    trimspace: false,
+    breakpoints: {
+      1024: {
+        perPage: 2,
+      },
+      640: {
+        perPage: 1,
+      },
+    },
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#060D17",
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="main-container">
       <Dialog
         open={open}
         onClose={handleClose}
@@ -50,15 +49,7 @@ export default function MainPage() {
             A Bela e a Fera
           </DialogTitle>
           <ExampleVideo />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              borderRadius: '30px',
-            }}
-          >
+          <div className="dialog-button-container">
             <Button
               onClick={handleClose}
               variant="contained"
@@ -71,15 +62,15 @@ export default function MainPage() {
         </DialogContent>
       </Dialog>
 
-      <div style={{ width: "65%" }}>
+      <div className="slider-container">
         <Splide options={options}>
-          <SplideSlide>
+          <SplideSlide onClick={handleOpen}>
             <img
               src={BelaFera}
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block" }}
+              style={{ display: "block", margin: "0 auto" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -88,7 +79,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block" }}
+              style={{ display: "block", margin: "0 auto" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -97,7 +88,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block" }}
+              style={{ display: "block", margin: "0 auto" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -106,7 +97,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block" }}
+              style={{ display: "block", margin: "0 auto" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -115,12 +106,19 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block" }}
+              style={{ display: "block", margin: "0 auto" }}
             />
           </SplideSlide>
         </Splide>
-        <div style={{paddingTop:'30px'}}>
-            <Button variant="contained" color="info dark" sx={{boxShadow:'none', border:'none', color:'white', fontWeight:'700'} } onClick={handleOpen}>Assistir</Button>
+        <div className="button-wrapper">
+          <Button
+            variant="contained"
+            color="info"
+            sx={{ boxShadow: 'none', border: 'none', color: 'white', fontWeight: '700' }}
+            onClick={handleOpen}
+          >
+            Assistir
+          </Button>
         </div>
       </div>
     </div>

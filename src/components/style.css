@@ -13,3 +13,39 @@
     transform: scale(1);
   }
   
+  /* Set up global styles and your main container */
+.main-container {
+    background-color: #060D17;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Slider container uses a percentage of the width on larger screens */
+  .slider-container {
+    width: 65%;
+  }
+  
+  /* Adjust the slider container for smaller screens */
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 90%;
+    }
+  }
+  
+  /* Optional: Style the dialog button container */
+  .dialog-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+  }
+  
+  /* Adjust the button wrapper spacing */
+  .button-wrapper {
+    padding-top: 30px;
+  }
+  

@@ -1,19 +1,16 @@
-/* MainPage.css */
 
-/* Transition for smooth effects */
+
 .splide__slide {
     transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.6; /* default lower opacity for non-focused slides */
-    transform: scale(1); /* slightly smaller for non-active slides */
+    opacity: 0.6; 
+    transform: scale(1);
   }
   
-  /* The active (focused) slide gets full opacity and scale */
   .splide__slide.is-active {
     opacity: 1;
     transform: scale(1);
   }
   
-  /* Set up global styles and your main container */
 .main-container {
     background-color: #060D17;
     width: 100vw;
@@ -23,19 +20,16 @@
     align-items: center;
   }
   
-  /* Slider container uses a percentage of the width on larger screens */
   .slider-container {
     width: 65%;
   }
   
-  /* Adjust the slider container for smaller screens */
   @media (max-width: 768px) {
     .slider-container {
       width: 90%;
     }
   }
   
-  /* Optional: Style the dialog button container */
   .dialog-button-container {
     display: flex;
     justify-content: center;
@@ -44,7 +38,6 @@
     border-radius: 30px;
   }
   
-  /* Adjust the button wrapper spacing */
   .button-wrapper {
     padding-top: 30px;
   }

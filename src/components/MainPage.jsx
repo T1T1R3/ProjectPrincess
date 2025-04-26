@@ -1,13 +1,14 @@
 import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import ExampleVideo from "./ExampleVideo";
 import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
 import './style.css';
-import BelaFera from './BelaFera.jpg';
-
+import { movies } from "../moviesBase";
 export default function MainPage() {
   const [open, setOpen] = React.useState(false);
+  const [activeMovieId, setActiveMovieId] = React.useState(null);
+  const [activeMovieName, setActiveMovieName] = React.useState(null);
+  const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
@@ -28,6 +29,14 @@ export default function MainPage() {
     },
   };
 
+  const handleMoved = (splide, newIndex) => {
+    const movieId = movies[newIndex].id;
+    setActiveMovieId(movieId);
+    setActiveMovieName(movies[newIndex].title);
+    setActiveMovieUrl(movies[newIndex].videoUrl);
+
+  }
+
   return (
     <div className="main-container">
       <Dialog
@@ -46,15 +55,21 @@ export default function MainPage() {
               justifyContent: 'center',
             }}
           >
-            A Bela e a Fera
+            {activeMovieName}
           </DialogTitle>
-          <ExampleVideo />
+          <iframe style={{border:'none', backgroundColor:'black'}} src={activeMovieUrl}
+          allowfullscreen="allowfullscreen"
+          mozallowfullscreen="mozallowfullscreen" 
+          msallowfullscreen="msallowfullscreen" 
+          oallowfullscreen="oallowfullscreen" 
+          webkitallowfullscreen="webkitallowfullscreen"
+          width="320" height="240"> </iframe> 
           <div className="dialog-button-container">
             <Button
               onClick={handleClose}
-              variant="contained"
-              color="secondary"
-              sx={{ marginBottom: '0px', marginTop: "5px" }}
+              variant="contained" 
+              color="info dark"
+              sx={{ boxShadow:'none', border:'none', color:'white', marginBottom: '0px', marginTop: "5px", fontWeight:'700' }}
             >
               Fechar
             </Button>
@@ -63,62 +78,18 @@ export default function MainPage() {
       </Dialog>
 
       <div className="slider-container">
-        <Splide options={options}>
-          <SplideSlide onClick={handleOpen}>
-            <img
-              src={BelaFera}
-              alt="A Bela e a Fera"
-              width="294"
-              height="412"
-              style={{ display: "block", margin: "0 auto" }}
-            />
-          </SplideSlide>
-          <SplideSlide>
-            <img
-              src={BelaFera}
-              alt="A Bela e a Fera"
-              width="294"
-              height="412"
-              style={{ display: "block", margin: "0 auto" }}
-            />
-          </SplideSlide>
-          <SplideSlide>
-            <img
-              src={BelaFera}
-              alt="A Bela e a Fera"
-              width="294"
-              height="412"
-              style={{ display: "block", margin: "0 auto" }}
-            />
-          </SplideSlide>
-          <SplideSlide>
-            <img
-              src={BelaFera}
-              alt="A Bela e a Fera"
-              width="294"
-              height="412"
-              style={{ display: "block", margin: "0 auto" }}
-            />
-          </SplideSlide>
-          <SplideSlide>
-            <img
-              src={BelaFera}
-              alt="A Bela e a Fera"
-              width="294"
-              height="412"
-              style={{ display: "block", margin: "0 auto" }}
-            />
-          </SplideSlide>
+        <Splide options={options} onMoved={handleMoved}>
+          {movies.map((movie) => (
+            <SplideSlide key={movie.id}>
+              <div className="movie-card">
+                <img style={{ display: "block", margin: "0 auto" }} width="294" height="412" src={movie.image} alt={movie.title} className="movie-image" />
+              </div>
+            </SplideSlide>
+          ))}
+
         </Splide>
         <div className="button-wrapper">
-          <Button
-            variant="contained"
-            color="info"
-            sx={{ boxShadow: 'none', border: 'none', color: 'white', fontWeight: '700' }}
-            onClick={handleOpen}
-          >
-            Assistir
-          </Button>
+            <Button variant="contained" color="info dark" sx={{boxShadow:'none', border:'none', color:'white', fontWeight:'700'} } onClick={handleOpen}>Assistir</Button>
         </div>
       </div>
     </div>

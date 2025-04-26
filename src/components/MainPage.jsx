@@ -14,9 +14,10 @@ export default function MainPage() {
 
   const options = {
     pagination: false,
-    perPage: 1,      
+    perPage: 3,      
     focus: 'center',  
-    gap: '0px',       
+    gap: '0px',   
+    trimspace: false,    
   };
 
   return (
@@ -70,7 +71,7 @@ export default function MainPage() {
         </DialogContent>
       </Dialog>
 
-      <div style={{ width: "60%", margin: "0 auto" }}>
+      <div style={{ width: "65%" }}>
         <Splide options={options}>
           <SplideSlide>
             <img
@@ -78,7 +79,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block", margin: "0 auto" }}
+              style={{ display: "block" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -87,7 +88,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block", margin: "0 auto" }}
+              style={{ display: "block" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -96,7 +97,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block", margin: "0 auto" }}
+              style={{ display: "block" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -105,7 +106,7 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block", margin: "0 auto" }}
+              style={{ display: "block" }}
             />
           </SplideSlide>
           <SplideSlide>
@@ -114,11 +115,11 @@ export default function MainPage() {
               alt="A Bela e a Fera"
               width="294"
               height="412"
-              style={{ display: "block", margin: "0 auto" }}
+              style={{ display: "block" }}
             />
           </SplideSlide>
         </Splide>
-        <div>
+        <div style={{paddingTop:'30px'}}>
             <Button variant="contained" color="info dark" sx={{boxShadow:'none', border:'none', color:'white', fontWeight:'700'} } onClick={handleOpen}>Assistir</Button>
         </div>
       </div>

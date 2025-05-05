@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Box, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import './style.css';
 import Castle1 from '../moviesCover/castle1.jpg';
@@ -21,7 +21,7 @@ export default function MainPage() {
         height: '100vh',
       }}
     >
-      {/* Primeira metade - Left */}
+
       <Box
         onMouseEnter={() => setFocusedSide("left")}
         onMouseLeave={handleLeave}
@@ -35,7 +35,7 @@ export default function MainPage() {
           justifyContent: 'center',
           alignItems: 'center',
           filter: focusedSide === "right" ? "brightness(0.5)" : "brightness(1)",
-          transition: "filter 0.3s", // Transição suave do filtro
+          transition: "filter 0.3s",
         }}
       >
         <IconButton sx={{maxWidth:'300px'}} onClick={() => {
@@ -47,7 +47,6 @@ export default function MainPage() {
         
       </Box>
 
-      {/* Segunda metade - Right */}
       <Box
         onMouseEnter={() => setFocusedSide("right")}
         onMouseLeave={handleLeave}

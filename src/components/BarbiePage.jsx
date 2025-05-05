@@ -1,5 +1,4 @@
 import React from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
 import './style.css';
@@ -7,44 +6,36 @@ import { movies } from "../moviesBase2";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useNavigate } from 'react-router-dom';
+import SearchBar from "./SearchBar";
+import MovieCarousel from "./MovieCarousel";
 
 export default function BarbiePage() {
   const [open, setOpen] = React.useState(false);
-  const [activeMovieId, setActiveMovieId] = React.useState(null);
   const [activeMovieName, setActiveMovieName] = React.useState(null);
   const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
+  const [activeMovieId, setActiveMovieId] = React.useState(null);
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const [nullMovieVerifier, setNullMovieVerifier] = React.useState(false);
+  
 
   const navigate = useNavigate();
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
 
-  const options = {
-    pagination:false,
-    perPage: 3,
-    focus: 'center',
-    arrows: true,
-    gap: '0px',
-    trimspace: false,
-    breakpoints: {
-      1024: {
-        perPage: 2,
-        arrows: false,
-      },
-      640: {
-        perPage: 1,
-        arrows: false,
-      },
-    },
+  const handleMoved = (movie) => {
+    console.log(movie);
+    if(movie){
+      setNullMovieVerifier(false);
+      setActiveMovieId(movie.id);
+      setActiveMovieName(movie.title);
+      setActiveMovieUrl(movie.videoUrl);
+    }
+    else{
+      setNullMovieVerifier(true);
+    }
   };
 
-  const handleMoved = (splide, newIndex) => {
-    const movieId = movies[newIndex].id;
-    setActiveMovieId(movieId);
-    setActiveMovieName(movies[newIndex].title);
-    setActiveMovieUrl(movies[newIndex].videoUrl);
-
-  }
 
   return (
     <div className="main-container" style={{ backgroundColor: 'pink', color: 'white', fontWeight: '700', display: 'flex', flexDirection:'column', justifyContent: 'center'}}>
@@ -87,19 +78,16 @@ export default function BarbiePage() {
       </Dialog>
 
       <div className="slider-container">
-        <Splide options={options} onMoved={handleMoved}>
-          {movies.map((movie) => (
-            <SplideSlide key={movie.id}>
-              <div className="movie-card">
-                <img style={{ display: "block", margin: "0 auto" }} width="294" height="412" src={movie.image} alt={movie.title} className="movie-image" />
-              </div>
-            </SplideSlide>
-          ))}
+        <MovieCarousel movies={movies} searchTerm={searchTerm} onMovieSelect={handleMoved} activeMovieId={activeMovieId} />
 
-        </Splide>
+        <div style={nullMovieVerifier ? {display:'flex', justifyContent:'center', fontSize:'30px'} : {display:'none'}}>Nenhum filme encontrado</div>
+
         <div className="button-wrapper" style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', gap: '20px', marginTop:'20px' }}>
             <Button startIcon={<PlayArrowIcon/>} variant="contained" sx={{backgroundColor:'white', color:'#060D17', boxShadow:'none', border:'none', fontWeight:'700'} } onClick={handleOpen}>Assistir</Button>
             <Button startIcon={<ArrowBackIosIcon/>} variant="outlined" color="info dark" sx={{boxShadow:'none', border:'none', color:'white', fontWeight:'700', marginBottom:'100px'} } onClick={() => navigate('/')}>Voltar</Button>
+        </div>
+        <div>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
       </div>
     </div>

@@ -52,4 +52,8 @@
   .button-wrapper {
     padding-top: 30px;
   }
+
+  .custom-outline{
+    border-color:white;
+  }
   

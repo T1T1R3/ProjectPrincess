@@ -92,7 +92,7 @@ export default function MainPage() {
             setFocusedSide("ghibli");
             navigate('/ghibli');
           }} >
-            <img src={Ghibli} alt="Disney" style={{ width:'380px'}} />
+            <img src={Ghibli} alt="Disney" style={{ width:'300px'}} />
         </IconButton>
       </Box>
     </Box>

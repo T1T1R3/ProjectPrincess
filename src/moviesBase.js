@@ -163,12 +163,6 @@ export const movies = [
     videoUrl: ""
   },
   {
-    id: 20,
-    title: "Enrolados Outra Vez",
-    image: Enrolados2,
-    videoUrl: ""
-  },
-  {
     id: 21,
     title: "Valente",
 

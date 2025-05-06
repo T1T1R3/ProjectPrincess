@@ -15,30 +15,36 @@ export default function BarbiePage() {
   const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
   const [activeMovieId, setActiveMovieId] = React.useState(null);
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [nullMovieVerifier, setNullMovieVerifier] = React.useState(false);
   
-
   const navigate = useNavigate();
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
 
   const handleMoved = (movie) => {
-    console.log(movie);
-    if(movie){
-      setNullMovieVerifier(false);
+    if (movie) {
       setActiveMovieId(movie.id);
       setActiveMovieName(movie.title);
       setActiveMovieUrl(movie.videoUrl);
     }
-    else{
-      setNullMovieVerifier(true);
-    }
   };
 
+  const filteredMovies = movies.filter(movie =>
+    movie.title.toLowerCase().includes(searchTerm.trim().toLowerCase())
+  );
 
   return (
-    <div className="main-container" style={{ backgroundColor: 'pink', color: 'white', fontWeight: '700', display: 'flex', flexDirection:'column', justifyContent: 'center'}}>
+    <div
+      className="main-container"
+      style={{
+        backgroundColor: 'pink',
+        color: 'white',
+        fontWeight: '700',
+        display: 'flex',
+        flexDirection:'column',
+        justifyContent: 'center'
+      }}
+    >
       <Dialog
         open={open}
         onClose={handleClose}
@@ -57,19 +63,26 @@ export default function BarbiePage() {
           >
             {activeMovieName}
           </DialogTitle>
-          <iframe style={{border:'none', backgroundColor:'black'}} src={activeMovieUrl}
-          allowfullscreen="allowfullscreen"
-          mozallowfullscreen="mozallowfullscreen" 
-          msallowfullscreen="msallowfullscreen" 
-          oallowfullscreen="oallowfullscreen" 
-          webkitallowfullscreen="webkitallowfullscreen"
-          width="400" height="300"> </iframe> 
+          <iframe
+            style={{ border: 'none', backgroundColor: 'black' }}
+            src={activeMovieUrl}
+            allowFullScreen
+            width="400"
+            height="300"
+          />
           <div className="dialog-button-container">
             <Button
               onClick={handleClose}
-              variant="contained" 
+              variant="contained"
               color="info dark"
-              sx={{ boxShadow:'none', border:'none', color:'white', marginBottom: '0px', marginTop: "5px", fontWeight:'700' }}
+              sx={{
+                boxShadow:'none',
+                border:'none',
+                color:'white',
+                marginBottom: '0px',
+                marginTop: "5px",
+                fontWeight:'700'
+              }}
             >
               Fechar
             </Button>
@@ -78,16 +91,63 @@ export default function BarbiePage() {
       </Dialog>
 
       <div className="slider-container">
-        <MovieCarousel movies={movies} searchTerm={searchTerm} onMovieSelect={handleMoved} activeMovieId={activeMovieId} />
+        <MovieCarousel
+          movies={filteredMovies}
+          searchTerm={searchTerm}
+          onMovieSelect={handleMoved}
+          activeMovieId={activeMovieId}
+        />
 
-        <div style={nullMovieVerifier ? {display:'flex', justifyContent:'center', fontSize:'30px'} : {display:'none'}}>Nenhum filme encontrado</div>
+        {searchTerm.trim() !== "" && filteredMovies.length === 0 && (
+          <div style={{ display:'flex', justifyContent:'center', fontSize:'30px' }}>
+            Nenhum filme encontrado
+          </div>
+        )}
 
-        <div className="button-wrapper" style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', gap: '20px', marginTop:'20px' }}>
-            <Button startIcon={<PlayArrowIcon/>} variant="contained" sx={{backgroundColor:'white', color:'#060D17', boxShadow:'none', border:'none', fontWeight:'700'} } onClick={handleOpen}>Assistir</Button>
-            <Button startIcon={<ArrowBackIosIcon/>} variant="outlined" color="info dark" sx={{boxShadow:'none', border:'none', color:'white', fontWeight:'700', marginBottom:'100px'} } onClick={() => navigate('/')}>Voltar</Button>
+        <div
+          className="button-wrapper"
+          style={{
+            display: 'flex',
+            flexDirection:'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '20px',
+            marginTop:'20px'
+          }}
+        >
+          <Button
+            startIcon={<PlayArrowIcon/>}
+            variant="contained"
+            sx={{
+              backgroundColor:'white',
+              color:'#060D17',
+              boxShadow:'none',
+              border:'none',
+              fontWeight:'700'
+            }}
+            onClick={handleOpen}
+          >
+            Assistir
+          </Button>
+          <Button
+            startIcon={<ArrowBackIosIcon/>}
+            variant="outlined"
+            color="info dark"
+            sx={{
+              boxShadow:'none',
+              border:'none',
+              color:'white',
+              fontWeight:'700',
+              marginBottom:'100px'
+            }}
+            onClick={() => navigate('/')}
+          >
+            Voltar
+          </Button>
         </div>
+
         <div>
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
       </div>
     </div>

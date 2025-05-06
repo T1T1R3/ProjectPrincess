@@ -51,10 +51,10 @@ export default function GhibliPage() {
         maxWidth="md"
         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
-        <DialogContent sx={{ backgroundColor: 'pink' }}>
+        <DialogContent sx={{ backgroundColor: '#2c7859' }}>
           <DialogTitle
             sx={{
-              backgroundColor: 'pink',
+              backgroundColor: '#2c7859',
               color: 'white',
               fontWeight: '700',
               display: 'flex',

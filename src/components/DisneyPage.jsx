@@ -9,12 +9,20 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from "./SearchBar";
 import MovieCarousel from "./MovieCarousel";
 
+import BrancaNeve from "../moviesBackground/Disney/BrancaNeve.webp";
+import BelaAdormecida from "../moviesBackground/Disney/BelaAdormecida.webp";
+import Cinderella from "../moviesBackground/Disney/Cinderella.jpg";
+
 export default function DisneyPage() {
   const [open, setOpen] = React.useState(false);
   const [activeMovieName, setActiveMovieName] = React.useState(null);
   const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
   const [activeMovieId, setActiveMovieId] = React.useState(null);
   const [searchTerm, setSearchTerm] = React.useState('');
+
+  const [backgroundImage, setBackgroundImage] = React.useState(BrancaNeve);
+
+
 
   const navigate = useNavigate();
 
@@ -27,6 +35,15 @@ export default function DisneyPage() {
       setActiveMovieId(movie.id);
       setActiveMovieName(movie.title);
       setActiveMovieUrl(movie.videoUrl);
+      if(movie.id === 1){
+        setBackgroundImage(BrancaNeve);
+      }
+      else if(movie.id === 2){
+        setBackgroundImage(BelaAdormecida);
+      }
+      else{
+        setBackgroundImage(Cinderella);
+      }
     }
   };
 
@@ -39,6 +56,10 @@ export default function DisneyPage() {
       className="main-container"
       style={{
         backgroundColor: '#060D17',
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         color: 'white',
         fontWeight: '700',
         display: 'flex',
@@ -46,6 +67,7 @@ export default function DisneyPage() {
         justifyContent: 'center'
       }}
     >
+      <div style={{width:'100%', height:'100%', position:'relative', display:'flex', justifyContent:'center', alignItems:'center', backdropFilter:'blur(10px)'}}>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -94,6 +116,7 @@ export default function DisneyPage() {
           </div>
         </DialogContent>
       </Dialog>
+      
 
       <div className="slider-container">
         <MovieCarousel
@@ -123,7 +146,7 @@ export default function DisneyPage() {
             justifyContent: 'center',
             alignItems: 'center',
             gap: '20px',
-            marginTop: '20px'
+            marginTop: '20px',
           }}
         >
           <Button
@@ -159,6 +182,7 @@ export default function DisneyPage() {
         <div>
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
+      </div>
       </div>
     </div>
   );

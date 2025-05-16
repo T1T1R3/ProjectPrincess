@@ -21,6 +21,7 @@ export default function DisneyPage() {
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const [backgroundImage, setBackgroundImage] = React.useState(BrancaNeve);
+  const [opacity, setOpacity] = React.useState(1);
 
 
 
@@ -35,15 +36,20 @@ export default function DisneyPage() {
       setActiveMovieId(movie.id);
       setActiveMovieName(movie.title);
       setActiveMovieUrl(movie.videoUrl);
-      if(movie.id === 1){
-        setBackgroundImage(BrancaNeve);
-      }
-      else if(movie.id === 2){
-        setBackgroundImage(BelaAdormecida);
-      }
-      else{
-        setBackgroundImage(Cinderella);
-      }
+      setOpacity(0);
+      setTimeout(() => {
+
+        if(movie.id === 1){
+          setBackgroundImage(BrancaNeve);
+        }
+        else if(movie.id === 2){
+          setBackgroundImage(BelaAdormecida);
+        }
+        else{
+          setBackgroundImage(Cinderella);
+        }
+        setOpacity(1);
+      }, 400);
     }
   };
 
@@ -52,8 +58,9 @@ export default function DisneyPage() {
   );
 
   return (
+    <div style={{width:'100vw', height:'100vh', position:'absolute', backgroundColor: '#060D17',}}>
     <div
-      className="main-container"
+      className="background"
       style={{
         backgroundColor: '#060D17',
         backgroundImage: `url(${backgroundImage})`,
@@ -64,10 +71,14 @@ export default function DisneyPage() {
         fontWeight: '700',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        position:'absolute',
+        opacity: opacity,
+        transition:"opacity 1s ease-in-out"
       }}
-    >
-      <div style={{width:'100%', height:'100%', position:'relative', display:'flex', justifyContent:'center', alignItems:'center', backdropFilter:'blur(10px)'}}>
+    />
+    <div className="main-content" style={{display:'flex', width:'100%', height:'100%'}}>
+      <div style={{width:'100%', height:'100%', display:'flex', justifyContent:'center', alignItems:'center', backdropFilter:'blur(10px)'}}>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -184,6 +195,7 @@ export default function DisneyPage() {
         </div>
       </div>
       </div>
+    </div>
     </div>
   );
 }

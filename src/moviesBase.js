@@ -1,3 +1,4 @@
+//Movies Covers
 import AladdinJafar from './moviesCover/Disney/AladdinJafar.jpg';
 import Aladin40 from './moviesCover/Disney/Aladin40.jpg';
 import Alladin from './moviesCover/Disney/Alladin.jpg';
@@ -34,6 +35,10 @@ import BelaFeraLive from './moviesCover/Disney/BelaFeraLive.jpg';
 import BrancaNeveLive from './moviesCover/Disney/BrancaNeveLive.png';
 import DamaVagabundoLive from './moviesCover/Disney/DamaVagabundoLive.webp'
 
+//Background Image
+import BrancaNeveCover from "./moviesBackground/Disney/BrancaNeve.webp";
+import BelaAdormecidaCover from "./moviesBackground/Disney/BelaAdormecida.webp";
+import CinderellaCover from "./moviesBackground/Disney/Cinderella.jpg";
 
 
 export const movies = [
@@ -43,7 +48,8 @@ export const movies = [
     title: "Branca de Neve e os Sete Anões",
     image: BrancaNeve,
     videoUrl:
-      "https://drive.google.com/file/d/1mJOCxgg4bDxJoNf5QfrIEQ7Ihk3vV8og/preview"
+      "https://drive.google.com/file/d/1mJOCxgg4bDxJoNf5QfrIEQ7Ihk3vV8og/preview",
+    backgroundImage: BrancaNeveCover
   },
   // Década de 1950
   {
@@ -51,19 +57,22 @@ export const movies = [
     title: "Cinderela",
     image: Cinderela,
     videoUrl:
-      "https://drive.google.com/file/d/1cBgQa7OMDt_MIa4Qe1BQQPHn8xBIkX_O/preview"
+      "https://drive.google.com/file/d/1cBgQa7OMDt_MIa4Qe1BQQPHn8xBIkX_O/preview",
+      backgroundImage: CinderellaCover
   },
   {
     id: 3,
     title: "A Bela Adormecida",
     image: BelaAdormecida,
-    videoUrl: "https://drive.google.com/file/d/1RQHkIdrafa61NCKE4S5iK4w8QT4UI4Az/preview"
+    videoUrl: "https://drive.google.com/file/d/1RQHkIdrafa61NCKE4S5iK4w8QT4UI4Az/preview",
+    backgroundImage: BelaAdormecidaCover
   },
   {
     id: 4,
     title: "A Dama e o Vagabundo",
     image: DamaVagabundo,
-    videoUrl: "https://drive.google.com/file/d/1w46U5o8hdFUv-q3YOSYAzl7jBVMU5ale/preview"
+    videoUrl: "https://drive.google.com/file/d/1w46U5o8hdFUv-q3YOSYAzl7jBVMU5ale/preview",
+    backgroundImage: BrancaNeveCover
   },
   // Década de 1990
   {
@@ -71,96 +80,111 @@ export const movies = [
     title: "A Pequena Sereia",
     image: PequenaSereia,
     videoUrl:
-      "https://drive.google.com/file/d/1f39DoILzq0aGiQ6WodoCRYe_Z710L0hM/preview"
+      "https://drive.google.com/file/d/1f39DoILzq0aGiQ6WodoCRYe_Z710L0hM/preview",
+      backgroundImage: BrancaNeveCover
   },
   {
     id: 6,
     title: "A Pequena Sereia II: O Retorno Para o Mar",
     image: PequenaSereia2,
-    videoUrl: "https://drive.google.com/file/d/1fWJjBKl4YdMTW8cEu8MKfnvYBd7m72ap/preview"
+    videoUrl: "https://drive.google.com/file/d/1fWJjBKl4YdMTW8cEu8MKfnvYBd7m72ap/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 7,
     title: "A Pequena Sereia: A História de Ariel",
     image: PequenaSereiaHistoria,
     videoUrl:
-      "https://drive.google.com/file/d/1xP77i2ifSP6DojahpQ8u6meQuZuNYCyB/preview"
+      "https://drive.google.com/file/d/1xP77i2ifSP6DojahpQ8u6meQuZuNYCyB/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 8,
     title: "A Bela e a Fera",
     image: BelaFera,
     videoUrl:
-      "https://www.dailymotion.com/embed/video/k3hDzmPfWTWihCCVSXy?api=postMessage"
+      "https://www.dailymotion.com/embed/video/k3hDzmPfWTWihCCVSXy?api=postMessage",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 9,
     title: "Aladdin",
     image: Alladin,
-    videoUrl: "https://drive.google.com/file/d/1pRe6Dzx3FrfumPiX6U-SMsfURjBc8MFd/preview"
+    videoUrl: "https://drive.google.com/file/d/1pRe6Dzx3FrfumPiX6U-SMsfURjBc8MFd/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 10,
     title: "Aladdin: O Retorno de Jafar",
     image: AladdinJafar,
-    videoUrl: "https://drive.google.com/file/d/1SnPVgRZhEP4LmA1pZPSnrG09A4vv31Un/preview"
+    videoUrl: "https://drive.google.com/file/d/1SnPVgRZhEP4LmA1pZPSnrG09A4vv31Un/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 11,
     title: "Aladdin e os 40 Ladrões",
     image: Aladin40,
-    videoUrl: ""
+    videoUrl: "",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 12,
     title: "Pocahontas",
     image: Pocahontas,
-    videoUrl: "https://drive.google.com/file/d/1Fn_lJZHVC2bd3T1Y-EXyCsW88G0bVsXa/preview"
+    videoUrl: "https://drive.google.com/file/d/1Fn_lJZHVC2bd3T1Y-EXyCsW88G0bVsXa/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 13,
     title: "Pocahontas 2: Uma Jornada para o Novo Mundo",
     image: Pocahontas2,
-    videoUrl: ""
+    videoUrl: "",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 14,
     title: "Mulan",
     image: Mulan,
-    videoUrl: "https://drive.google.com/file/d/1amkV-cruEy5UN36RGu2rfmsxupqsnmQl/preview"
+    videoUrl: "https://drive.google.com/file/d/1amkV-cruEy5UN36RGu2rfmsxupqsnmQl/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 15,
     title: "Mulan 2: A Lenda Continua",
     image: Mulan2,
-    videoUrl: "https://drive.google.com/file/d/1EersTjVx747twnZkqIjQailYDX1NChOb/preview"
+    videoUrl: "https://drive.google.com/file/d/1EersTjVx747twnZkqIjQailYDX1NChOb/preview",
+    backgroundImage: BrancaNeveCover
   },
   // Década de 2000
   {
     id: 16,
     title: "Cinderela II: Os Sonhos se Realizam",
     image: Cinderela2,
-    videoUrl: "https://drive.google.com/file/d/1pzfDhnChj-7DaW3oZN0V42gK8ZRzs3z5/preview"
+    videoUrl: "https://drive.google.com/file/d/1pzfDhnChj-7DaW3oZN0V42gK8ZRzs3z5/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 17,
     title: "Cinderela III: Uma Volta no Tempo",
     image: Cinderela3,
-    videoUrl: "https://drive.google.com/file/d/1Sz4o32FQp3sCpS3-mU5QPZ9KlYzNUAIi/preview"
+    videoUrl: "https://drive.google.com/file/d/1Sz4o32FQp3sCpS3-mU5QPZ9KlYzNUAIi/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 18,
     title: "A Princesa e o Sapo",
     image: PrincesaESapo,
     videoUrl:
-      "https://drive.google.com/file/d/15sxctn7s1-Ksz2TK_POe6Kl6qIRab87d/preview"
+      "https://drive.google.com/file/d/15sxctn7s1-Ksz2TK_POe6Kl6qIRab87d/preview",
+      backgroundImage: BrancaNeveCover
   },
   // Década de 2010
   {
     id: 19,
     title: "Enrolados",
     image: Enrolados,
-    videoUrl: "https://drive.google.com/file/d/1X9RCIBLmLKib6k-V06IMJ-6uInCLaTGT/preview"
+    videoUrl: "https://drive.google.com/file/d/1X9RCIBLmLKib6k-V06IMJ-6uInCLaTGT/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 21,
@@ -168,99 +192,115 @@ export const movies = [
 
     image: Valente,
     videoUrl:
-      "https://drive.google.com/file/d/1_trMmFws7zIVuXSqOLyzg2KES6Kc1DHm/preview"
+      "https://drive.google.com/file/d/1_trMmFws7zIVuXSqOLyzg2KES6Kc1DHm/preview",
+      backgroundImage: BrancaNeveCover
   },
   {
     id: 22,
     title: "Frozen: Uma Aventura Congelante",
     image: Frozen,
-    videoUrl: "https://drive.google.com/file/d/1nESTmnXm-o7X7OFfkXFPdgyJXpEqVDBu/preview"
+    videoUrl: "https://drive.google.com/file/d/1nESTmnXm-o7X7OFfkXFPdgyJXpEqVDBu/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 23,
     title: "Frozen II",
     image: Frozen2,
-    videoUrl: "https://drive.google.com/file/d/1RuS9orBKFfo7mHigmTLBtEZooVIGuT__/preview"
+    videoUrl: "https://drive.google.com/file/d/1RuS9orBKFfo7mHigmTLBtEZooVIGuT__/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 24,
     title: "Moana: Um Mar de Aventuras",
     image: Moana,
-    videoUrl: "https://drive.google.com/file/d/1EJClyOGHsaRFdELFpKyJbuoJT9lLprzd/preview"
+    videoUrl: "https://drive.google.com/file/d/1EJClyOGHsaRFdELFpKyJbuoJT9lLprzd/preview",
+    backgroundImage: BrancaNeveCover
   },
   // Década de 2020
   {
     id: 25,
     title: "Raya e o Último Dragão",
     image: Raya,
-    videoUrl: "https://drive.google.com/file/d/1Gia8TVmeNy1W5mZyaysByuWWfObISqqN/preview"
+    videoUrl: "https://drive.google.com/file/d/1Gia8TVmeNy1W5mZyaysByuWWfObISqqN/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 26,
     title: "Moana 2",
     image: Moana2,
-    videoUrl: "https://drive.google.com/file/d/1QOsJsk01nfmtkm8Jin2xxapAUs22nDyI/preview"
+    videoUrl: "https://drive.google.com/file/d/1QOsJsk01nfmtkm8Jin2xxapAUs22nDyI/preview",
+    backgroundImage: BrancaNeveCover
   },
   // Live-actions
   {
     id: 27,
     title: "Cinderela (Live-action)",
     image: CinderelaLive,
-    videoUrl: "https://drive.google.com/file/d/1l7ftGyZykcmmLnH-HTSWxcy43lRE9HXL/preview"
+    videoUrl: "https://drive.google.com/file/d/1l7ftGyZykcmmLnH-HTSWxcy43lRE9HXL/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 28,
     title: "A Bela e a Fera (Live-action)",
     image: BelaFeraLive,
-    videoUrl: "https://drive.google.com/file/d/1AQMiUKjsUn4zHOv7R_vNLDElJvcsmyZ1/preview"
+    videoUrl: "https://drive.google.com/file/d/1AQMiUKjsUn4zHOv7R_vNLDElJvcsmyZ1/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 29,
     title: "Aladdin (Live-action)",
     image: AladdinLive,
-    videoUrl: "https://drive.google.com/file/d/1GnAPHUGIAZ-QeabgopmNvLt3MZaiVMHr/preview"
+    videoUrl: "https://drive.google.com/file/d/1GnAPHUGIAZ-QeabgopmNvLt3MZaiVMHr/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 30,
     title: "Mulan (Live-action)",
     image: MulanLive,
-    videoUrl: "https://drive.google.com/file/d/16rTxD4GWwKtLABl0xyUQoLKrGSKvuK7H/preview"
+    videoUrl: "https://drive.google.com/file/d/16rTxD4GWwKtLABl0xyUQoLKrGSKvuK7H/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 31,
     title: "A Pequena Sereia (Live-action)",
     image: PequenaSereiaLive,
-    videoUrl: "https://drive.google.com/file/d/1ehme0aXTafwDoeUrTX3eoxaDv0Hr3Czs/preview"
+    videoUrl: "https://drive.google.com/file/d/1ehme0aXTafwDoeUrTX3eoxaDv0Hr3Czs/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 32,
     title: "Branca de Neve (Live-action)",
     image: BrancaNeveLive,
-    videoUrl: "https://drive.google.com/file/d/1s03zYMrIn-tPuX58uVZNJy6HoSfw8Biu/preview"
+    videoUrl: "https://drive.google.com/file/d/1s03zYMrIn-tPuX58uVZNJy6HoSfw8Biu/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 33,
     title: "Malévola",
     image: Malevola,
-    videoUrl: "https://drive.google.com/file/d/1V5JwCK4VkxazWyWcUPU5yxfhoqtLw2ns/preview"
+    videoUrl: "https://drive.google.com/file/d/1V5JwCK4VkxazWyWcUPU5yxfhoqtLw2ns/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 34,
     title: "Malévola: Dona do Mal",
     image: Malevola2,
-    videoUrl: "https://drive.google.com/file/d/1VW7PLtMKYVUu8s-eJLpa9egjv4LoWk-P/preview"
+    videoUrl: "https://drive.google.com/file/d/1VW7PLtMKYVUu8s-eJLpa9egjv4LoWk-P/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 35,
     title: "Dama e o Vagabundo (Live-action)",
     image: DamaVagabundoLive,
-    videoUrl: "https://drive.google.com/file/d/1A2ULzyyU9jLr_5rQVJhPbop_HZSnxs-I/preview"
+    videoUrl: "https://drive.google.com/file/d/1A2ULzyyU9jLr_5rQVJhPbop_HZSnxs-I/preview",
+    backgroundImage: BrancaNeveCover
   },
   {
     id: 36,
     title: "Corcunda de Notre Dame",
     image: Corcunda,
     videoUrl:
-      "https://drive.google.com/file/d/1dna5op-0xmgJP7wXGq3km0M_VL6r1ODj/preview"
+      "https://drive.google.com/file/d/1dna5op-0xmgJP7wXGq3km0M_VL6r1ODj/preview",
+    backgroundImage: BrancaNeveCover
   }
 ];

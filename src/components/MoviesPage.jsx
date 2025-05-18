@@ -2,14 +2,13 @@ import React from "react";
 import "@splidejs/react-splide/css";
 import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
 import "./style.css";
-import { movies } from "../moviesBase";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import MovieCarousel from "./MovieCarousel";
 
-export default function DisneyPage() {
+export default function MoviesPage({movies}) {
   const [open, setOpen] = React.useState(false);
   const [activeMovieName, setActiveMovieName] = React.useState(null);
   const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);

@@ -28,7 +28,7 @@ export default function SignIn() {
         setFade(0);
         setTimeout(() => {
           setIsLoggedIn(true);
-        }, 400);
+        }, 1000);
       }
     }catch (error) {
       console.error("Error during login:", error);

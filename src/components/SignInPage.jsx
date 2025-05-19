@@ -28,7 +28,7 @@ export default function SignIn() {
         setFade(0);
         setTimeout(() => {
           setIsLoggedIn(true);
-        }, 500);
+        }, 400);
       }
     }catch (error) {
       console.error("Error during login:", error);
@@ -48,6 +48,7 @@ export default function SignIn() {
   if (isLoggedIn) {
     navigate("/home");
   }
+
 
   return (
     <div

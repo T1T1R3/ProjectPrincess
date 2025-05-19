@@ -22,6 +22,13 @@ export default function MainPage() {
     return () => clearTimeout(timeout);
   }, []);
 
+  const handleNavigateOut = (route) => {
+    setFade(0);
+    setTimeout(() => {
+      navigate(route);
+    }, 100);
+  };
+
   return (
     <Box
       sx={{
@@ -53,7 +60,7 @@ export default function MainPage() {
       >
         <IconButton sx={{maxWidth:'300px'}} onClick={() => {
             setFocusedSide("right");
-            navigate('/barbie');
+            handleNavigateOut("/barbie");
           }} >
             <img src={Barbie} alt="Disney" style={{ width:'90%'}} />
         </IconButton>
@@ -78,7 +85,7 @@ export default function MainPage() {
       >
         <IconButton sx={{maxWidth:'300px'}} onClick={() => {
             setFocusedSide("right");
-            navigate('/disney');
+            handleNavigateOut("/disney");
           }} >
             <img src={Disney} alt="Disney" style={{ width:'100%'}} />
         </IconButton>
@@ -101,7 +108,7 @@ export default function MainPage() {
       >
         <IconButton sx={{maxWidth:'300px'}} onClick={() => {
             setFocusedSide("ghibli");
-            navigate('/ghibli');
+            handleNavigateOut("/ghibli");
           }} >
             <img src={Ghibli} alt="Disney" style={{ width:'300px'}} />
         </IconButton>

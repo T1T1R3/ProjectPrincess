@@ -47,6 +47,13 @@ export default function MoviesPage({movies}) {
     }
   };
 
+  const handleNavigateOut = (route) => {
+    setFade(0);
+    setTimeout(() => {
+      navigate(route);
+    }, 300);
+  };
+
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
@@ -203,7 +210,7 @@ export default function MoviesPage({movies}) {
                   fontWeight: "700",
                   marginBottom: "100px",
                 }}
-                onClick={() => navigate("/home")}
+                onClick={() => handleNavigateOut("/home")}
               >
                 Voltar
               </Button>

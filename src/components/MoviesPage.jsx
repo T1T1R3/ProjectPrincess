@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import "@splidejs/react-splide/css";
 import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
 import "./style.css";
@@ -14,6 +15,7 @@ export default function MoviesPage({movies}) {
   const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
   const [activeMovieId, setActiveMovieId] = React.useState(null);
   const [searchTerm, setSearchTerm] = React.useState("");
+  const [fade, setFade] = useState(0);
 
   const [backgroundImage, setBackgroundImage] = React.useState(null);
   const [opacity, setOpacity] = React.useState(1);
@@ -22,6 +24,13 @@ export default function MoviesPage({movies}) {
 
   const handleClose = () => setOpen(false);
   const handleOpen = () => setOpen(true);
+
+  useEffect(() => {
+      const timeout = setTimeout(() => {
+        setFade(1);
+      }, 10);
+      return () => clearTimeout(timeout);
+    }, []);
 
   const handleMoved = (movie) => {
     console.log(movie);
@@ -34,7 +43,7 @@ export default function MoviesPage({movies}) {
       setTimeout(() => {
         setOpacity(1);
         setBackgroundImage(movie.backgroundImage);
-      }, 300);
+      }, 100);
     }
   };
 
@@ -49,6 +58,8 @@ export default function MoviesPage({movies}) {
         height: "100vh",
         position: "absolute",
         backgroundColor: "#060D17",
+        opacity: fade,
+        transition: "opacity 1s ease-out", 
       }}
     >
       <div
@@ -66,7 +77,7 @@ export default function MoviesPage({movies}) {
           justifyContent: "center",
           position: "absolute",
           opacity: opacity,
-          transition: "opacity 1s ease-in-out",
+          transition: "opacity 0.5s ease-in-out",
         }}
       />
       <div

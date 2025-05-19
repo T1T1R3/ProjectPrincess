@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Box, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import './style.css';
@@ -10,17 +11,27 @@ import Disney from '../moviesCover/Disney.png';
 import Ghibli from "../moviesCover/ghibli.png"
 export default function MainPage() {
   const navigate = useNavigate();
+  const [fade, setFade] = useState(0);
   const [focusedSide, setFocusedSide] = React.useState("right");
-
   const handleLeave = () => setFocusedSide("none");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setFade(1);
+    }, 10);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <Box
       sx={{
         display: 'flex',
+        backgroundColor: "#060D17",
         flexDirection: { xs: 'column', md: 'row' }, 
         width: '100vw',
         height: '100vh',
+        opacity: fade,
+        transition: "opacity 1s ease-out", 
       }}
     >
 

@@ -203,7 +203,7 @@ export default function MoviesPage({movies}) {
                   fontWeight: "700",
                   marginBottom: "100px",
                 }}
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/home")}
               >
                 Voltar
               </Button>

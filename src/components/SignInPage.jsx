@@ -151,7 +151,6 @@ export default function SignIn() {
               color: "white",
               borderRadius: "5px",
               fontWeight: "700",
-              fontSize: "100px",
             }}
             onClickCapture={() => handleLogin(user, passw)}
           >

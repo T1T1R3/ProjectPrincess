@@ -13,7 +13,7 @@ const AppRoutes = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<SignInPage />} />
-          <Route path="/home1" element={<MainPage />} />
+          <Route path="/home" element={<MainPage />} />
           <Route path="/disney" element={<MoviesPage movies={movies} />} />
           <Route path="/barbie" element={<MoviesPage movies={movies2} />} />
           <Route path="/ghibli" element={<MoviesPage movies={movies3} />} />

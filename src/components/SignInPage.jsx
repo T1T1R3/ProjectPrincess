@@ -150,7 +150,8 @@ export default function SignIn() {
               backgroundColor: "#060D17",
               color: "white",
               borderRadius: "5px",
-              fontWeight: "700"
+              fontWeight: "700",
+              fontSize: "100px",
             }}
             onClickCapture={() => handleLogin(user, passw)}
           >

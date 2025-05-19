@@ -34,7 +34,7 @@ export default function LoadingScreen() {
           filter: "blur(10px)",
         }}
       />
-      <CircularProgress color="neutral" size="lg" variant='soft'/>
+      <CircularProgress color="neutral" size="lg" variant='plain'/>
     </div>
   );
 }

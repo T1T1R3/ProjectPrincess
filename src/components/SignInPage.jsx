@@ -3,9 +3,9 @@ import { useState } from "react";
 import { Box, Button, TextField, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import BrancaNeveCover from "../moviesBackground/Disney/LoginBackground.jpg";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import bcrypt from "bcryptjs";
 
-const userHash = "$2a$12$iX2D50gNJR63PzJBws3TB.vDfv3QYWpdCiGOaPIt1QKKkpb5tL17K";
 const passwHash = "$2a$12$SkKwagED5ByENnHoyfXVCeLDDcLCz0625YPBhS5zbXlBIgxRT3sq.";
 
 export default function SignIn() {
@@ -21,10 +21,9 @@ export default function SignIn() {
   const handleLogin = async (user, password) => {
 
     try{
-      const match = await bcrypt.compare(user, userHash);
-      const match2 = await bcrypt.compare(password, passwHash);
+      const match = await bcrypt.compare(password, passwHash);
 
-      if(match && match2){
+      if(match){
         setFade(0);
         setTimeout(() => {
           setIsLoggedIn(true);
@@ -101,7 +100,7 @@ export default function SignIn() {
             transition: "opacity 0.5s ease-out"
           }}
         >
-          <h2>Login</h2>
+          <h2 style={{marginTop:"-20px"}}>Login</h2>
           <div
             style={{
               display: "flex",
@@ -115,17 +114,14 @@ export default function SignIn() {
               sx={{
                 color: "#060D17",
                 fontSize: "15px",
-                marginTop: "-20px"
+                marginTop: "-100px",
+                alignSelf: "center",
+                fontWeight: "700",
               }}
             >
-              Usuário
+              Bem vindo, Christina!
             </InputLabel>
-            <TextField
-              sx={{ minWidth: "300px" }}
-              variant="standard"
-              size="small"
-              onChange={(e) => setUser(e.target.value)}
-            />
+            <FavoriteIcon sx={{ color: "red", alignSelf: "center", }} />
             <InputLabel
               sx={{
                 color: "#060D17",

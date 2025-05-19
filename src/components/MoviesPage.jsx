@@ -54,15 +54,6 @@ export default function MoviesPage({movies}) {
     }, 300);
   };
 
-  useEffect(() => {
-    movies.forEach((movie) => {
-      if (movie.backgroundImage) {
-        const img = new Image();
-        img.src = movie.backgroundImage;
-      }
-    });
-  }, [movies]);
-
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );

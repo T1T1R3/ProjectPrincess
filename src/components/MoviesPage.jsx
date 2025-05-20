@@ -83,8 +83,6 @@ export default function MoviesPage({movies}) {
         height: "100vh",
         position: "absolute",
         backgroundColor: "#060D17",
-        opacity: fade,
-        transition: "opacity 1s ease-out", 
       }}
     >
       <div

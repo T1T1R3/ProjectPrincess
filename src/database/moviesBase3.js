@@ -1,29 +1,29 @@
-import CasteloAnimado from "./moviesCover/Ghibli/CasteloAnimado.webp";
-import CasteloCeu from "./moviesCover/Ghibli/ceu.webp";
-import MeuAmigoTotoro from "./moviesCover/Ghibli/totoro.webp";
-import TumuloVagalumes from "./moviesCover/Ghibli/vagalumes.webp";
-import Nausicaa from "./moviesCover/Ghibli/nausicaa.webp";
-import Kiki from "./moviesCover/Ghibli/kiki.webp";
-import Memorias from "./moviesCover/Ghibli/memorias.webp" ;
-import Porco from "./moviesCover/Ghibli/porco.webp";
-import Oceano from "./moviesCover/Ghibli/ocean.webp";
-import PomPoko from "./moviesCover/Ghibli/pompoko.webp";
-import Sussurros from "./moviesCover/Ghibli/sussurro.webp";
-import Mononoke from "./moviesCover/Ghibli/mononoke.webp";
-import Yamadas from "./moviesCover/Ghibli/yamadas.webp";
-import Chihiro from "./moviesCover/Ghibli/chichiro.webp";
-import Gatos from "./moviesCover/Ghibli/gatos.webp";
-import Terramar from "./moviesCover/Ghibli/terramar.webp";
-import Ponyo from "./moviesCover/Ghibli/ponyo.webp";
-import Pequeninos from "./moviesCover/Ghibli/pequeninos.webp";
-import Kokuriko from "./moviesCover/Ghibli/kokoriko.webp";
-import Vento from "./moviesCover/Ghibli/vento.webp";
-import Kaguya from "./moviesCover/Ghibli/kaguya.webp";
-import Marnie from "./moviesCover/Ghibli/marnie.webp";
-import Bruxa from "./moviesCover/Ghibli/bruxa.webp";
-import Menino from "./moviesCover/Ghibli/menino.webp";
+import CasteloAnimado from "../assets/moviesCover/Ghibli/CasteloAnimado.webp";
+import CasteloCeu from "../assets/moviesCover/Ghibli/ceu.webp";
+import MeuAmigoTotoro from "../assets/moviesCover/Ghibli/totoro.webp";
+import TumuloVagalumes from "../assets/moviesCover/Ghibli/vagalumes.webp";
+import Nausicaa from "../assets/moviesCover/Ghibli/nausicaa.webp";
+import Kiki from "../assets/moviesCover/Ghibli/kiki.webp";
+import Memorias from "../assets/moviesCover/Ghibli/memorias.webp" ;
+import Porco from "../assets/moviesCover/Ghibli/porco.webp";
+import Oceano from "../assets/moviesCover/Ghibli/ocean.webp";
+import PomPoko from "../assets/moviesCover/Ghibli/pompoko.webp";
+import Sussurros from "../assets/moviesCover/Ghibli/sussurro.webp";
+import Mononoke from "../assets/moviesCover/Ghibli/mononoke.webp";
+import Yamadas from "../assets/moviesCover/Ghibli/yamadas.webp";
+import Chihiro from "../assets/moviesCover/Ghibli/chichiro.webp";
+import Gatos from "../assets/moviesCover/Ghibli/gatos.webp";
+import Terramar from "../assets/moviesCover/Ghibli/terramar.webp";
+import Ponyo from "../assets/moviesCover/Ghibli/ponyo.webp";
+import Pequeninos from "../assets/moviesCover/Ghibli/pequeninos.webp";
+import Kokuriko from "../assets/moviesCover/Ghibli/kokoriko.webp";
+import Vento from "../assets/moviesCover/Ghibli/vento.webp";
+import Kaguya from "../assets/moviesCover/Ghibli/kaguya.webp";
+import Marnie from "../assets/moviesCover/Ghibli/marnie.webp";
+import Bruxa from "../assets/moviesCover/Ghibli/bruxa.webp";
+import Menino from "../assets/moviesCover/Ghibli/menino.webp";
 
-import BrancaNeveCover from "./moviesBackground/Disney/BrancaNeve.webp";
+import BrancaNeveCover from "../assets/moviesBackground/Disney/BrancaNeve.webp";
 
 
 export const movies = [

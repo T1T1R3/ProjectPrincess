@@ -2,12 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "@splidejs/react-splide/css";
 import { DialogTitle, DialogContent, Dialog, Button } from "@mui/material";
-import "./style.css";
+import "../style.css";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { useNavigate } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import MovieCarousel from "./MovieCarousel";
+import SearchBar from "../components/SearchBar";
+import MovieCarousel from "../components/MovieCarousel";
 
 export default function MoviesPage({ movies }) {
   const [open, setOpen] = React.useState(false);

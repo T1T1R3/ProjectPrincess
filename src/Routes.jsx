@@ -1,10 +1,10 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { movies } from "./moviesBase";
-import { movies as movies2 } from "./moviesBase2";
-import { movies as movies3 } from "./moviesBase3";
-import MainPage from "./components/MainPage";
-import MoviesPage from "./components/MoviesPage";
-import SignInPage from "./components/SignInPage";
+import { movies } from "./database/moviesBase";
+import { movies as movies2 } from "./database/moviesBase2";
+import { movies as movies3 } from "./database/moviesBase3";
+import MainPage from "./routes/MainPage";
+import MoviesPage from "./routes/MoviesPage";
+import SignInPage from "./routes/SignInPage";
 import Layout from "./components/Layout";
 
 const AppRoutes = () => {

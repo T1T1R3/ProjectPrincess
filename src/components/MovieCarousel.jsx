@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect } from "react";
-import "./style.css";
+import "../style.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 

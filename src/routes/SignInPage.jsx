@@ -1,8 +1,8 @@
-import "./style.css";
+import "../style.css";
 import { useState } from "react";
 import { Box, Button, TextField, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import BrancaNeveCover from "../moviesBackground/Disney/LoginBackground.jpg";
+import BrancaNeveCover from "../assets/moviesBackground/Disney/LoginBackground.jpg";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import bcrypt from "bcryptjs";
 

@@ -1,5 +1,5 @@
 import CircularProgress from "@mui/joy/CircularProgress";
-import BrancaNeveCover from "../moviesBackground/Disney/LoginBackground.jpg";
+import BrancaNeveCover from "../assets/moviesBackground/Disney/LoginBackground.jpg";
 
 export default function LoadingScreen() {
   return (

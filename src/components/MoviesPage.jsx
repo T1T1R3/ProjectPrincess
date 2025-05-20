@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import MovieCarousel from "./MovieCarousel";
 
-export default function MoviesPage({movies}) {
+export default function MoviesPage({ movies }) {
   const [open, setOpen] = React.useState(false);
   const [activeMovieName, setActiveMovieName] = React.useState(null);
   const [activeMovieUrl, setActiveMovieUrl] = React.useState(null);
@@ -17,8 +17,9 @@ export default function MoviesPage({movies}) {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [fade, setFade] = useState(0);
 
-
-  const [backgroundImage, setBackgroundImage] = React.useState(movies[0].backgroundImage);
+  const [backgroundImage, setBackgroundImage] = React.useState(
+    movies[0].backgroundImage
+  );
   const [loadedUrl, setLoadedUrl] = React.useState(null);
   const [opacity, setOpacity] = React.useState(1);
 
@@ -28,27 +29,26 @@ export default function MoviesPage({movies}) {
   const handleOpen = () => setOpen(true);
 
   useEffect(() => {
-      const timeout = setTimeout(() => {
-        setFade(1);
-      }, 10);
-      return () => clearTimeout(timeout);
-    }, []);
+    const timeout = setTimeout(() => {
+      setFade(1);
+    }, 10);
+    return () => clearTimeout(timeout);
+  }, []);
 
-  useEffect(() =>{
+  useEffect(() => {
     let isMounted = true;
     const img = new Image();
     img.src = backgroundImage;
-    img.onload = () =>{
-      if(isMounted){
+    img.onload = () => {
+      if (isMounted) {
         setLoadedUrl(backgroundImage);
       }
-    }
+    };
 
     return () => {
       isMounted = false;
-    }
-
-  }, [backgroundImage])
+    };
+  }, [backgroundImage]);
 
   const handleMoved = (movie) => {
     console.log(movie);
@@ -89,7 +89,7 @@ export default function MoviesPage({movies}) {
         className="background"
         style={{
           backgroundColor: "#060D17",
-          backgroundImage: loadedUrl ? `url(${loadedUrl})` : 'none',
+          backgroundImage: loadedUrl ? `url(${loadedUrl})` : "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

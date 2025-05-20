@@ -1,4 +1,3 @@
-// components/Layout.jsx
 import { useEffect, useState, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import LoadingScreen from "./Loading";

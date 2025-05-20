@@ -3,10 +3,11 @@ import { useState } from "react";
 import { Box, Button, TextField, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import BrancaNeveCover from "../moviesBackground/Disney/LoginBackground.jpg";
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import bcrypt from "bcryptjs";
 
-const passwHash = "$2a$12$SkKwagED5ByENnHoyfXVCeLDDcLCz0625YPBhS5zbXlBIgxRT3sq.";
+const passwHash =
+  "$2a$12$SkKwagED5ByENnHoyfXVCeLDDcLCz0625YPBhS5zbXlBIgxRT3sq.";
 
 export default function SignIn() {
   const [user, setUser] = useState("");
@@ -19,17 +20,16 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const handleLogin = async (user, password) => {
-
-    try{
+    try {
       const match = await bcrypt.compare(password, passwHash);
 
-      if(match){
+      if (match) {
         setFade(0);
         setTimeout(() => {
           setIsLoggedIn(true);
         }, 1000);
       }
-    }catch (error) {
+    } catch (error) {
       console.error("Error during login:", error);
     }
   };
@@ -43,11 +43,10 @@ export default function SignIn() {
       setLoginOpacity(0);
     }
   };
-    
+
   if (isLoggedIn) {
     navigate("/home");
   }
-
 
   return (
     <div
@@ -62,7 +61,7 @@ export default function SignIn() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        fontWeight: "700"
+        fontWeight: "700",
       }}
     >
       <div
@@ -75,14 +74,14 @@ export default function SignIn() {
           backgroundRepeat: "no-repeat",
           position: "absolute",
           filter: `blur(${blur}px)`,
-          transition: "filter 0.5s ease-out"
+          transition: "filter 0.5s ease-out",
         }}
       />
       <div
         style={{
           position: "relative",
           opacity: fade,
-          transition: "opacity 0.5s ease-out"
+          transition: "opacity 0.5s ease-out",
         }}
       >
         <Box
@@ -97,17 +96,17 @@ export default function SignIn() {
             alignItems: "center",
             padding: "20px",
             opacity: loginOpacity,
-            transition: "opacity 0.5s ease-out"
+            transition: "opacity 0.5s ease-out",
           }}
         >
-          <h2 style={{marginTop:"-20px"}}>Login</h2>
+          <h2 style={{ marginTop: "-20px" }}>Login</h2>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               gap: "10px",
               padding: "20px",
-              alignItems: "start"
+              alignItems: "start",
             }}
           >
             <InputLabel
@@ -121,12 +120,12 @@ export default function SignIn() {
             >
               Bem vindo, Christina!
             </InputLabel>
-            <FavoriteIcon sx={{ color: "red", alignSelf: "center", }} />
+            <FavoriteIcon sx={{ color: "red", alignSelf: "center" }} />
             <InputLabel
               sx={{
                 color: "#060D17",
                 fontSize: "15px",
-                marginTop: "15px"
+                marginTop: "15px",
               }}
             >
               Senha
@@ -153,7 +152,8 @@ export default function SignIn() {
             Entrar
           </Button>
         </Box>
-        <Button onClick={showBackground}
+        <Button
+          onClick={showBackground}
           sx={{ color: "white", fontWeight: 700, marginTop: "10px" }}
         >
           Plano de fundo

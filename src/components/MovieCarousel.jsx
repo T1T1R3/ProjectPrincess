@@ -3,7 +3,12 @@ import "./style.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-export default function MovieCarousel({ movies, searchTerm, activeMovieId, onMovieSelect }) {
+export default function MovieCarousel({
+  movies,
+  searchTerm,
+  activeMovieId,
+  onMovieSelect,
+}) {
   const filteredMovies = useMemo(() => {
     return movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchTerm.toLowerCase())

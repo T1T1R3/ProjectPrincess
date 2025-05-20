@@ -1,4 +1,4 @@
-import CircularProgress from '@mui/joy/CircularProgress';
+import CircularProgress from "@mui/joy/CircularProgress";
 import BrancaNeveCover from "../moviesBackground/Disney/LoginBackground.jpg";
 
 export default function LoadingScreen() {
@@ -34,7 +34,7 @@ export default function LoadingScreen() {
           filter: "blur(10px)",
         }}
       />
-      <CircularProgress color="neutral" size="lg" variant='plain'/>
+      <CircularProgress color="neutral" size="lg" variant="plain" />
     </div>
   );
 }

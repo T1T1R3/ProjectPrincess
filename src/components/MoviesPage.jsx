@@ -17,7 +17,9 @@ export default function MoviesPage({movies}) {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [fade, setFade] = useState(0);
 
-  const [backgroundImage, setBackgroundImage] = React.useState(null);
+
+  const [backgroundImage, setBackgroundImage] = React.useState(movies[0].backgroundImage);
+  const [loadedUrl, setLoadedUrl] = React.useState(null);
   const [opacity, setOpacity] = React.useState(1);
 
   const navigate = useNavigate();
@@ -31,6 +33,22 @@ export default function MoviesPage({movies}) {
       }, 10);
       return () => clearTimeout(timeout);
     }, []);
+
+  useEffect(() =>{
+    let isMounted = true;
+    const img = new Image();
+    img.src = backgroundImage;
+    img.onload = () =>{
+      if(isMounted){
+        setLoadedUrl(backgroundImage);
+      }
+    }
+
+    return () => {
+      isMounted = false;
+    }
+
+  }, [backgroundImage])
 
   const handleMoved = (movie) => {
     console.log(movie);
@@ -73,7 +91,7 @@ export default function MoviesPage({movies}) {
         className="background"
         style={{
           backgroundColor: "#060D17",
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: loadedUrl ? `url(${loadedUrl})` : 'none',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

@@ -1,5 +1,5 @@
 import "../style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Button, TextField, InputLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import BrancaNeveCover from "../assets/moviesBackground/Disney/LoginBackground.jpg";
@@ -14,10 +14,17 @@ export default function SignIn() {
   const [passw, setPassw] = useState("");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [fade, setFade] = useState(1);
+  const [fade, setFade] = useState(0);
   const [blur, setBlur] = useState(15);
   const [loginOpacity, setLoginOpacity] = useState(1);
   const navigate = useNavigate();
+
+  useEffect(() => {
+      const timeout = setTimeout(() => {
+        setFade(1);
+      }, 800);
+      return () => clearTimeout(timeout);
+    }, []);
 
   const handleLogin = async (user, password) => {
     try {

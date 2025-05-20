@@ -18,7 +18,7 @@ export default function MainPage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFade(1);
-    }, 10);
+    }, 800);
     return () => clearTimeout(timeout);
   }, []);
 

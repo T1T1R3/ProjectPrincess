@@ -31,7 +31,7 @@ export default function MoviesPage({ movies }) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFade(1);
-    }, 10);
+    }, 800);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -83,6 +83,8 @@ export default function MoviesPage({ movies }) {
         height: "100vh",
         position: "absolute",
         backgroundColor: "#060D17",
+        opacity:fade,
+        transition: "1s fade ease-in-out"
       }}
     >
       <div

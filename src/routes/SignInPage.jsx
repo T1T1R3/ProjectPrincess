@@ -92,6 +92,24 @@ export default function SignIn() {
         }}
       >
         <Box
+        sx={{
+            backgroundColor: "white",
+            minWidth: "200px",
+            minHeight: "50px",
+            borderRadius: "15px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-around",
+            alignItems: "center",
+            padding: "5px",
+            opacity: loginOpacity,
+            transition: "opacity 0.5s ease-out",
+            marginBottom: "20px",
+          }}>
+            <h3>FELIZ ANIVERSÁRIO MEU AMOR</h3>
+            <h3 style={{marginTop:'-20px'}}>🎉🎉🎉🎉</h3>
+        </Box>
+        <Box
           sx={{
             backgroundColor: "white",
             minWidth: "200px",
